@@ -12,5 +12,4 @@ Cypress.Commands.add('loginDashboard', function () {
   cy.get(loginPage.passwordInput).type(userData.password)
   cy.get(loginPage.loginBtn).click()
   cy.url().should('include', '/bank/main.jsp')
-
 })

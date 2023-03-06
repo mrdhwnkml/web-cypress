@@ -26,22 +26,28 @@ describe('Login Dashboard', () => {
     cy.get(loginPage.usernameInput).type(userData.name)
     cy.get(loginPage.passwordInput).type(userData.password)
     cy.get(loginPage.loginBtn).click()
-    cy.xpath("//span[@id='_ctl0__ctl0_Content_Main_message']").should("include.text","Login Failed: We're sorry, but this username or password was not found in our system. Please try again.")
+    cy.xpath("//span[@id='_ctl0__ctl0_Content_Main_message']").should(
+      'include.text',
+      "Login Failed: We're sorry, but this username or password was not found in our system. Please try again."
+    )
   })
   it('Input Username and invalid Password should be fail', () => {
     cy.xpath('//*[contains(text(),"Sign In")]').click()
     cy.get(loginPage.usernameInput).type(userData.email)
     cy.get(loginPage.passwordInput).type(userData.name)
     cy.get(loginPage.loginBtn).click()
-    cy.xpath("//span[@id='_ctl0__ctl0_Content_Main_message']").should("include.text","Login Failed: We're sorry, but this username or password was not found in our system. Please try again.")
+    cy.xpath("//span[@id='_ctl0__ctl0_Content_Main_message']").should(
+      'include.text',
+      "Login Failed: We're sorry, but this username or password was not found in our system. Please try again."
+    )
   })
   it('Not input Username and Password should be fail', () => {
     cy.xpath('//*[contains(text(),"Sign In")]').click()
     cy.get(loginPage.usernameInput)
     cy.get(loginPage.passwordInput)
     cy.get(loginPage.loginBtn).click()
-    cy.on('window:alert',(txt)=>{
-    expect(txt).to.equal('You must enter a valid username');
+    cy.on('window:alert', (txt) => {
+      expect(txt).to.equal('You must enter a valid username')
     })
   })
 })

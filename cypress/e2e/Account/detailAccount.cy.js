@@ -13,5 +13,4 @@ describe('Detail Account User', () => {
     cy.xpath("//input[@id='btnGetAccount']").click()
     cy.url().should('include', '/bank/showAccount?listAccounts')
   })
- 
 })
