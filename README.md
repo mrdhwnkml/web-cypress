@@ -51,8 +51,8 @@ For Windows, download installer using links below:
 These are the steps to install frontend-tests
 
 ```bash
-$ git clone https://git.edenfarm.id/dede.zuliana/frontend-dashboard.git
-$ cd frontend-dashboard
+$ git clone https://gitlab.com/automation-cypress/web-cypress
+$ cd web-cypress
 $ npm install
 ```
 
@@ -343,10 +343,10 @@ Don't write baseUrl or URL as environment variable inside cypress.json.
 
 Since we will be deploying test on different stages, we need to make our test cases deployment seamless. In order to achieve that, we need to define baseUrl in command line instead of hardcoding it.
 
-For example, inside login_sanity.spec.js, write **cy.visit('/')**. Suppose login is in development stage and it's can only be accessed from https://v3-dashboard.edenfarm.tech
+For example, inside login_sanity.spec.js, write **cy.visit('/')**. Suppose login is in development stage and it's can only be accessed from https://demo.testfire.net/
 
 ```
-$ CYPRESS_baseUrl=https://v3-dashboard.edenfarm.tech npx cypress run --spec cypress/e2e/Login/*
+$ CYPRESS_baseUrl=https://demo.testfire.net/ npx cypress run --spec cypress/e2e/Login/*
 ```
 
 Command line above will only run spec files inside /Login
