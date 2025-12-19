@@ -1,4 +1,4 @@
-# qa-frontend-cypress
+# WEB-CYPRESS
 
 Frontend testing for New Core using [Cypress](https://cypress.io)
 
