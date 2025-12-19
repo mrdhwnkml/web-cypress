@@ -51,7 +51,7 @@ For Windows, download installer using links below:
 These are the steps to install frontend-tests
 
 ```bash
-$ git clone https://gitlab.com/automation-cypress/web-cypress
+$ git clone https://github.com/automation-cypress/web-cypress
 $ cd web-cypress
 $ npm install
 ```
@@ -59,7 +59,7 @@ $ npm install
 Install git pre-commit hook (use Git Bash for Windows)
 
 ```
-$ cd qa-frontend-cypress
+$ cd web-cypress
 $ cp scripts/pre-commit .git/hooks/
 $ chmod +x .git/hooks/pre-commit
 ```
@@ -111,7 +111,7 @@ As mentioned on Folder Structure section, every folder in /e2e should only conta
 Variable and function name should be written in **lowerCamelCase**
 
 ```
-let fullName = "Dede Zuliana"
+let fullName = "M Ridhwan K"
 ```
 
 ```
