@@ -4,7 +4,6 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 /// <reference types="Cypress" />
 
 import '../../support/login/login'
-import userPage from '../../fixtures/model/User/user'
 
 describe('Sign Out', () => {
   beforeEach(() => {
