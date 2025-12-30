@@ -8,6 +8,9 @@
     "index.js"
   ],
   "scripts": {
+    "test:account": "npx cypress run --spec cypress/e2e/Account/**/* --browser chrome",
+    "test:login": "npx cypress run --spec cypress/e2e/Login/**/* --browser chrome",
+    "test:Signout": "npx cypress run --spec cypress/e2e/Sign_Out/**/* --browser chrome",
     "cy:open": "npx cypress open --browser chrome",
     "test": "npm start & cypress run --browser chrome",
     "e2e": "npx cypress run",
