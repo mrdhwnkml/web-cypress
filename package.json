@@ -1,7 +1,7 @@
 {
   "name": "cypress-frontend-dashboard",
   "version": "1.0.0",
-  "description": "Repository created in the article REST API Tests with Cypress",
+  "description": "Repository created in the article Web Tests with Cypress",
   "main": "index.js",
   "files": [
     "templates/",
@@ -18,8 +18,7 @@
     "prepare": "husky install"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://git.edenfarm.id/qa-automation/frontend-dashboard"
+    "type": "git"
   },
   "keywords": [
     "cypress",
