@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    # Run Cypress tests in headless mode
+    # Upload Cypress screenshots & videos as artifact
     - name: Run Cypress tests
       run: npx cypress run --reporter cypress-mochawesome-reporter
 
@@ -34,10 +34,3 @@ jobs:
       with:
         name: cypress-html-report
         path: cypress/reports/html
-        
-    # Upload Cypress screenshots & videos as artifact
-    - name: Upload Cypress Artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: cypress-videos
-        path: cypress/videos
