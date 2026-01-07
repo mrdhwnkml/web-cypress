@@ -1,7 +1,7 @@
 # WEB-CYPRESS
 
 Frontend testing for New Core using [Cypress](https://cypress.io)
-#### Report Running
+#### Report Running Test!
 [![Cypress Report](https://img.shields.io/badge/Cypress-Report-blue)](https://mrdhwnkml.github.io/web-cypress/)
 ## Table of Contents
 
