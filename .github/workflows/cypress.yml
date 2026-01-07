@@ -34,3 +34,10 @@ jobs:
       with:
         name: cypress-html-report
         path: cypress/reports/html
+
+    # Upload Cypress screenshots & videos as artifact
+    - name: Deploy Cypress HTML report to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v6
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./cypress/reports/html
