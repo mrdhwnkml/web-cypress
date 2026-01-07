@@ -1,7 +1,8 @@
 # WEB-CYPRESS
 
 Frontend testing for New Core using [Cypress](https://cypress.io)
-
+#### Report Running
+[![Cypress Report](https://img.shields.io/badge/Cypress-Report-blue)](https://mrdhwnkml.github.io/web-cypress/)
 ## Table of Contents
 
 -   [Table of Contents](#markdown-header-table-of-contents)
@@ -387,9 +388,6 @@ Make fixture file name simple and meaningful. For example, we need a profile pic
 ### Intelligent Code Completion
 
 Always put this line at the top of spec file
-
-#### Report
-[![Cypress Report](https://img.shields.io/badge/Cypress-Report-blue)](https://mrdhwnkml.github.io/web-cypress/)
 ```
 
 /// <reference types="Cypress" />
