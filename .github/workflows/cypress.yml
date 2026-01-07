@@ -6,6 +6,13 @@ on:
   pull_request:
     branches: [ main ]
 
+  # ⏰ Scheduler: 23:30 WIB (16:30 UTC)
+  schedule:
+    - cron: "30 16 * * *"
+
+  # ▶ Bisa dijalankan manual dari UI
+  workflow_dispatch:
+
 permissions:
   contents: write
 
@@ -14,34 +21,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout repo
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    # Setup Node.js
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 20  # pilih versi Node sesuai requirement Cypress
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-    # Install dependencies
-    - name: Install dependencies
-      run: npm install
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-    # Upload Cypress screenshots & videos as artifact
-    - name: Run Cypress tests
-      run: npx cypress run --reporter cypress-mochawesome-reporter
+      # Run Cypress tests
+      - name: Run Cypress tests
+        run: npx cypress run --reporter cypress-mochawesome-reporter
 
-    - name: Upload HTML report artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: cypress-html-report
-        path: cypress/reports/html
+      # Upload report as artifact (buat download)
+      - name: Upload HTML report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-html-report
+          path: cypress/reports/html
 
-    # Upload Cypress screenshots & videos as artifact
-    - name: Deploy Cypress HTML report to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./cypress/reports/html
-        force_orphan: true
+      # Deploy report ke GitHub Pages
+      - name: Deploy Cypress HTML report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports/html
+          force_orphan: true
