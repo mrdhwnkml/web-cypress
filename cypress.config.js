@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
     reporter: "cypress-mochawesome-reporter",
-    video: false,
+    video: true,
     reporterOptions: {
         charts: true,
         reportPageTitle: "Cypress Inline Reporter",
