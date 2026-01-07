@@ -388,6 +388,9 @@ Make fixture file name simple and meaningful. For example, we need a profile pic
 
 Always put this line at the top of spec file
 
+#### Report
+[![Cypress Report](https://img.shields.io/badge/Cypress-Report-blue)](https://mrdhwnkml.github.io/web-cypress/)
 ```
+
 /// <reference types="Cypress" />
 ```
