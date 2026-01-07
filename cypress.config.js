@@ -7,7 +7,8 @@ module.exports = defineConfig({
         charts: true,
         reportPageTitle: "Cypress Inline Reporter",
         embeddedScreenshots: true,
-        inlineAssets: true //Adds the asserts inline
+        inlineAssets: true, //Adds the asserts inline
+        overwrite: false,   
     },
     e2e: {
         setupNodeEvents(on, config) {
