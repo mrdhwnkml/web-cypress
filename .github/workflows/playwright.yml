@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Cypress Tests
 
 on:
   push:
@@ -7,35 +7,33 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  cypress-run:
     runs-on: ubuntu-latest
 
     steps:
-    # 1️⃣ Checkout repo
+    # Checkout repo
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # 2️⃣ Setup Node.js
+    # Setup Node.js
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: 20  # pilih versi Node sesuai requirement Cypress
 
-    # 3️⃣ Install dependencies
+    # Install dependencies
     - name: Install dependencies
       run: npm install
 
-    # 4️⃣ Install Playwright browsers
-    - name: Install Playwright browsers
-      run: npx playwright install --with-deps
+    # Run Cypress tests in headless mode
+    - name: Run Cypress tests
+      run: npx cypress run
 
-    # 5️⃣ Run Playwright tests
-    - name: Run tests
-      run: npx playwright test --reporter=html
-
-    # 6️⃣ Upload HTML report as artifact
-    - name: Upload Playwright report
+    # Upload Cypress screenshots & videos as artifact
+    - name: Upload Cypress Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: playwright-report
-        path: playwright-report/
+        name: cypress-artifacts
+        path: |
+          cypress/screenshots
+          cypress/videos
