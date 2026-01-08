@@ -1,4 +1,5 @@
-<img src="https://github.com/user-attachments/assets/8cb287db-2de6-4775-b8f0-6e3666aa31bd" alt="Cypress Logo" width="50" height="50" /> **WEB-CYPRESS**
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/c6977689-441d-4102-89ef-a1d80d9dc271" />
+WEB-CYPRESS
 
 
 Frontend testing for New Core using [Cypress](https://cypress.io)
