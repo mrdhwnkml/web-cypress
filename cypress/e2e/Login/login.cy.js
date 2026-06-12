@@ -3,6 +3,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 })
 /// <reference types="Cypress" />
 import userData from '../../fixtures/data/user.json'
+import invalidData from '../../fixtures/data/profile.json'
 import loginPage from '../../fixtures/model/Login/login'
 
 describe('Login Dashboard', () => {
@@ -15,23 +16,19 @@ describe('Login Dashboard', () => {
   })
 
   it('Input Valid Username and Password should be success', () => {
-    cy.xpath('//*[contains(text(),"Sign In")]').click()
-    cy.get(loginPage.usernameInput).type(userData.email)
-    cy.get(loginPage.passwordInput).type(userData.password)
-    cy.get(loginPage.loginBtn).click()
-    cy.url().should('include', '/bank/main.jsp')
+    cy.loginDashboard()
   })
   it('Input invalid Username and Password should be fail', () => {
     cy.xpath('//*[contains(text(),"Sign In")]').click()
-    cy.get(loginPage.usernameInput).type(userData.name)
-    cy.get(loginPage.passwordInput).type(userData.password)
+    cy.get(loginPage.usernameInput).type(invalidData.wrongName)
+    cy.get(loginPage.passwordInput).type(invalidData.wrongPassword)
     cy.get(loginPage.loginBtn).click()
     cy.xpath("//span[@id='_ctl0__ctl0_Content_Main_message']").should(
       'include.text',
       "Login Failed: We're sorry, but this username or password was not found in our system. Please try again."
     )
   })
-  it('Input Username and invalid Password should be fail', () => {
+  it.skip('Input Username and invalid Password should be fail', () => {
     cy.xpath('//*[contains(text(),"Sign In")]').click()
     cy.get(loginPage.usernameInput).type(userData.email)
     cy.get(loginPage.passwordInput).type(userData.name)

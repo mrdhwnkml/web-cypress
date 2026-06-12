@@ -1,7 +1,11 @@
-{
-    "name": "dezul",
+[
+ {
     "email": "admin",
-    "password": "admin",
-    "nameProscus": "Name 30",
-    "phoneNumber": "62811100023"
-}
+    "password": "admin"
+  },
+  {
+    "email": "jsmith",
+    "password": "demo1234"
+  }
+
+]
