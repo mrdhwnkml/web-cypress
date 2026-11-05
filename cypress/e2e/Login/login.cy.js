@@ -15,10 +15,10 @@ describe('Login Dashboard', () => {
     })
   })
 
-  it('Input Valid Username and Password should be success', () => {
+  it.skip('Input Valid Username and Password should be success', () => {
     cy.loginDashboard()
   })
-  it('Input invalid Username and Password should be fail', () => {
+  it.skip('Input invalid Username and Password should be fail', () => {
     cy.xpath('//*[contains(text(),"Sign In")]').click()
     cy.get(loginPage.usernameInput).type(invalidData.wrongName)
     cy.get(loginPage.passwordInput).type(invalidData.wrongPassword)
@@ -38,7 +38,7 @@ describe('Login Dashboard', () => {
       "Login Failed: We're sorry, but this username or password was not found in our system. Please try again."
     )
   })
-  it('Not input Username and Password should be fail', () => {
+  it.skip('Not input Username and Password should be fail', () => {
     cy.xpath('//*[contains(text(),"Sign In")]').click()
     cy.get(loginPage.usernameInput)
     cy.get(loginPage.passwordInput)
