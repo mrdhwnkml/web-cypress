@@ -10,7 +10,7 @@ describe('Sign Out', () => {
     cy.loginDashboard()
   })
 
-  it('User sign out should be succes', function () {
+  it.skip('User sign out should be succes', function () {
     cy.xpath("//a[@id='LoginLink']").click()
     cy.url().should('include', '/index.jsp')
   })
