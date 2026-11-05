@@ -15,16 +15,11 @@ describe('Login Dashboard', () => {
     })
   })
 
- 
   it('Input invalid Username and Password should be fail', () => {
-
-    cy.get('[data-testid="username-input"]').type("belajarbareng")
-    cy.get('[data-testid="password-input"]').type("belajarbareng1")
+    cy.get('[data-testid="username-input"]').type('belajarbareng')
+    cy.get('[data-testid="password-input"]').type('belajarbareng1')
     cy.get('[data-testid="login-button"]').click()
 
-cy.get('[data-testid="toast-item-error-login"]')
-  .should('be.visible');
+    cy.get('[data-testid="toast-item-error-login"]').should('be.visible')
   })
-
- 
 })
