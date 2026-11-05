@@ -16,6 +16,6 @@ module.exports = defineConfig({
             return require("./cypress/plugin/index.js")(on, config);
         },
         chromeWebSecurity: false,
-        baseUrl: "https://demo.testfire.net/login.jsp"
+        baseUrl: "https://belajar-bareng.onrender.com/"
     }
 });
