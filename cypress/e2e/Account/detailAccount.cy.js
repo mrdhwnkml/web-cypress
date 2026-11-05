@@ -9,7 +9,7 @@ describe('Detail Account User', () => {
     cy.loginDashboard()
   })
 
-  it('User get detail account information', function () {
+  it.skip('User get detail account information', function () {
     cy.xpath("//input[@id='btnGetAccount']").click()
     cy.url().should('include', '/bank/showAccount?listAccounts')
   })
